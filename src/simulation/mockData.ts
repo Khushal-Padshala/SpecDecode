@@ -107,6 +107,139 @@ export const CENTRAL_BENCHMARK_DATA: CentralBenchmarkData = {
 
 export const PRESET_PROMPTS: PresetPrompt[] = [
   {
+    id: 'prompt-calculate-equation',
+    title: 'Calculate the Equation',
+    category: 'Math',
+    prompt: 'Calculate the equation: Solve for x in 2x² - 8x + 6 = 0 using the quadratic formula, and evaluate the definite integral ∫(3x² - 4x + 1) dx from x=0 to x=3.',
+    estimatedSpeedup: 1.88,
+    tokenSequence: {
+      finalText: '### Step 1: Solving the Quadratic Equation\nFor 2x² - 8x + 6 = 0 (where a = 2, b = -8, c = 6):\nDiscriminant D = b² - 4ac = (-8)² - 4(2)(6) = 64 - 48 = 16.\nRoots: x = (-b ± √D) / (2a) = (8 ± 4) / 4.\n• x₁ = (8 + 4) / 4 = 3\n• x₂ = (8 - 4) / 4 = 1\n\n### Step 2: Evaluating the Definite Integral\n∫₀³ (3x² - 4x + 1) dx = [x³ - 2x² + x]₀³\n= (3³ - 2(3)² + 3) - 0\n= (27 - 18 + 3) = 12.\n\nFinal Answer: The equation roots are x = 1, 3 and the integral value is 12.',
+      batches: [
+        {
+          draft: ['###', ' Step', ' 1:', ' Solving', ' the'],
+          acceptedCount: 5
+        },
+        {
+          draft: [' Quadratic', ' Equation', '\nFor', ' 2', 'x'],
+          acceptedCount: 5
+        },
+        {
+          draft: ['²', ' -', ' 8', 'x', ' +'],
+          acceptedCount: 5
+        },
+        {
+          draft: [' 6', ' =', ' 0', ' (where', ' a'],
+          acceptedCount: 5
+        },
+        {
+          draft: [' =', ' 2,', ' b', ' =', ' -8,'],
+          acceptedCount: 5
+        },
+        {
+          draft: [' c', ' =', ' 6):\n', 'Discrimin', 'ant'],
+          acceptedCount: 5
+        },
+        {
+          draft: [' D', ' =', ' b²', ' -', ' 4'],
+          acceptedCount: 5
+        },
+        {
+          draft: ['ac', ' =', ' (-8', ')²', ' ='],
+          acceptedCount: 4,
+          correctionToken: ' -'
+        },
+        {
+          draft: [' 4(2)(', '6)', ' =', ' 64', ' -'],
+          acceptedCount: 5
+        },
+        {
+          draft: [' 48', ' =', ' 16.\n', 'Roots', ':'],
+          acceptedCount: 5
+        },
+        {
+          draft: [' x', ' =', ' (-b', ' ±', ' √'],
+          acceptedCount: 5
+        },
+        {
+          draft: ['D)', ' /', ' (2', 'a)', ' ='],
+          acceptedCount: 5
+        },
+        {
+          draft: [' (8', ' ±', ' 4)', ' /', ' 4.\n'],
+          acceptedCount: 5
+        },
+        {
+          draft: ['•', ' x₁', ' =', ' (8', ' +'],
+          acceptedCount: 5
+        },
+        {
+          draft: [' 4)', ' /', ' 4', ' =', ' 3\n'],
+          acceptedCount: 5
+        },
+        {
+          draft: ['•', ' x₂', ' =', ' (8', ' -'],
+          acceptedCount: 5
+        },
+        {
+          draft: [' 4)', ' /', ' 4', ' =', ' 1\n'],
+          acceptedCount: 5
+        },
+        {
+          draft: ['\n###', ' Step', ' 2:', ' Evaluating', ' the'],
+          acceptedCount: 5
+        },
+        {
+          draft: [' Definite', ' Integral', '\n∫', '₀', '³'],
+          acceptedCount: 5
+        },
+        {
+          draft: [' (3', 'x²', ' -', ' 4', 'x'],
+          acceptedCount: 5
+        },
+        {
+          draft: [' +', ' 1)', ' dx', ' =', ' [x'],
+          acceptedCount: 5
+        },
+        {
+          draft: ['³', ' -', ' 2', 'x²', ' +'],
+          acceptedCount: 5
+        },
+        {
+          draft: [' x', ']₀', '³\n', '=', ' (3'],
+          acceptedCount: 5
+        },
+        {
+          draft: ['³', ' -', ' 2(3', ')²', ' +'],
+          acceptedCount: 5
+        },
+        {
+          draft: [' 3)', ' -', ' 0\n', '=', ' (27'],
+          acceptedCount: 5
+        },
+        {
+          draft: [' -', ' 18', ' +', ' 3)', ' ='],
+          acceptedCount: 5
+        },
+        {
+          draft: [' 12.\n', '\nFinal', ' Answer', ':', ' The'],
+          acceptedCount: 5
+        },
+        {
+          draft: [' equation', ' roots', ' are', ' x', ' ='],
+          acceptedCount: 5
+        },
+        {
+          draft: [' 1,', ' 3', ' and', ' the', ' integral'],
+          acceptedCount: 5
+        },
+        {
+          draft: [' value', ' is', ' 12.'],
+          acceptedCount: 3
+        }
+      ]
+    }
+  },
+  {
     id: 'prompt-nn-learning',
     title: 'Neural Network Learning',
     category: 'Science',

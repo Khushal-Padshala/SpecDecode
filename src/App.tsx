@@ -54,17 +54,17 @@ export default function App() {
 
   if (isLoading || !benchmarkData) {
     return (
-      <div className="min-h-screen bg-[#020617] flex flex-col items-center justify-center space-y-4 text-cyan-400 font-mono text-xs">
-        <div className="w-10 h-10 rounded-xl border border-cyan-500/40 bg-cyan-500/10 flex items-center justify-center animate-spin">
+      <div className="min-h-screen bg-[#fdf8fa] flex flex-col items-center justify-center space-y-4 text-pink-600 font-mono text-xs">
+        <div className="w-10 h-10 rounded-xl border border-pink-300 bg-pink-50 flex items-center justify-center animate-spin text-pink-500">
           &bull;
         </div>
-        <p>Loading SpecDecode Inference Engine...</p>
+        <p className="font-semibold text-slate-700">Loading SpecDecode Inference Engine...</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#020617] text-slate-100 flex flex-col selection:bg-cyan-500/30 selection:text-cyan-200">
+    <div className="min-h-screen bg-[#fdf8fa] text-slate-800 flex flex-col selection:bg-pink-500/20 selection:text-pink-800">
       
       {/* 1. Global Navigation Bar */}
       <Navbar

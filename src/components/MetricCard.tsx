@@ -28,39 +28,39 @@ export const MetricCard: React.FC<MetricCardProps> = ({
 }) => {
   const variantStyles = {
     cyan: {
-      border: 'border-cyan-500/20 hover:border-cyan-500/40',
-      bg: 'bg-gradient-to-b from-cyan-950/20 to-slate-900/50',
-      valueColor: 'text-cyan-300',
-      glow: 'group-hover:shadow-[0_0_20px_rgba(6,182,212,0.15)]',
-      iconBg: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/30'
+      border: 'border-pink-200/80 hover:border-pink-300',
+      bg: 'bg-white shadow-xs',
+      valueColor: 'text-pink-600',
+      glow: 'group-hover:shadow-md group-hover:shadow-pink-500/10',
+      iconBg: 'bg-pink-50 text-pink-600 border-pink-200'
     },
     green: {
-      border: 'border-emerald-500/20 hover:border-emerald-500/40',
-      bg: 'bg-gradient-to-b from-emerald-950/20 to-slate-900/50',
-      valueColor: 'text-emerald-300',
-      glow: 'group-hover:shadow-[0_0_20px_rgba(16,185,129,0.15)]',
-      iconBg: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30'
+      border: 'border-emerald-200/80 hover:border-emerald-300',
+      bg: 'bg-white shadow-xs',
+      valueColor: 'text-emerald-700',
+      glow: 'group-hover:shadow-md group-hover:shadow-emerald-500/10',
+      iconBg: 'bg-emerald-50 text-emerald-700 border-emerald-200'
     },
     purple: {
-      border: 'border-purple-500/20 hover:border-purple-500/40',
-      bg: 'bg-gradient-to-b from-purple-950/20 to-slate-900/50',
-      valueColor: 'text-purple-300',
-      glow: 'group-hover:shadow-[0_0_20px_rgba(168,85,247,0.15)]',
-      iconBg: 'bg-purple-500/10 text-purple-400 border-purple-500/30'
+      border: 'border-rose-200/80 hover:border-rose-300',
+      bg: 'bg-white shadow-xs',
+      valueColor: 'text-rose-600',
+      glow: 'group-hover:shadow-md group-hover:shadow-rose-500/10',
+      iconBg: 'bg-rose-50 text-rose-600 border-rose-200'
     },
     amber: {
-      border: 'border-amber-500/20 hover:border-amber-500/40',
-      bg: 'bg-gradient-to-b from-amber-950/20 to-slate-900/50',
-      valueColor: 'text-amber-300',
-      glow: 'group-hover:shadow-[0_0_20px_rgba(245,158,11,0.15)]',
-      iconBg: 'bg-amber-500/10 text-amber-400 border-amber-500/30'
+      border: 'border-amber-200/80 hover:border-amber-300',
+      bg: 'bg-white shadow-xs',
+      valueColor: 'text-amber-700',
+      glow: 'group-hover:shadow-md group-hover:shadow-amber-500/10',
+      iconBg: 'bg-amber-50 text-amber-700 border-amber-200'
     },
     neutral: {
-      border: 'border-slate-800 hover:border-slate-700',
-      bg: 'bg-slate-900/60',
-      valueColor: 'text-slate-100',
-      glow: 'group-hover:shadow-[0_0_20px_rgba(255,255,255,0.05)]',
-      iconBg: 'bg-slate-800 text-slate-400 border-slate-700'
+      border: 'border-pink-100 hover:border-pink-200',
+      bg: 'bg-white shadow-xs',
+      valueColor: 'text-slate-800',
+      glow: 'group-hover:shadow-md group-hover:shadow-pink-500/5',
+      iconBg: 'bg-slate-50 text-slate-700 border-slate-200'
     }
   }[variant];
 
@@ -71,7 +71,7 @@ export const MetricCard: React.FC<MetricCardProps> = ({
     >
       {/* Header with Title and Icon */}
       <div className="flex items-center justify-between gap-2">
-        <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+        <span className="text-xs font-bold uppercase tracking-wider text-slate-700">
           {title}
         </span>
         {icon && (
@@ -87,7 +87,7 @@ export const MetricCard: React.FC<MetricCardProps> = ({
           {value}
         </span>
         {unit && (
-          <span className="text-sm font-semibold text-slate-400 font-mono">
+          <span className="text-sm font-semibold text-slate-700 font-mono">
             {unit}
           </span>
         )}
@@ -96,14 +96,14 @@ export const MetricCard: React.FC<MetricCardProps> = ({
       {/* Delta and Description */}
       <div className="mt-2.5 flex items-center justify-between gap-2 text-xs">
         {description && (
-          <p className="text-slate-400 text-[11px] leading-snug line-clamp-1">
+          <p className="text-slate-700 text-[11px] leading-snug line-clamp-1">
             {description}
           </p>
         )}
         
         {delta && (
           <div className={`inline-flex items-center gap-1 font-mono text-[11px] font-medium ${
-            isPositiveDelta ? 'text-emerald-400' : 'text-rose-400'
+            isPositiveDelta ? 'text-emerald-700' : 'text-rose-700'
           }`}>
             {isPositiveDelta ? <TrendingUp className="w-3 h-3" /> : <TrendingDown className="w-3 h-3" />}
             <span>{delta}</span>
@@ -113,7 +113,7 @@ export const MetricCard: React.FC<MetricCardProps> = ({
 
       {/* Optional Badge */}
       {badgeText && (
-        <div className="absolute top-2 right-2 text-[9px] uppercase tracking-wider font-mono px-1.5 py-0.5 rounded bg-slate-800/80 border border-slate-700 text-slate-300">
+        <div className="absolute top-2 right-2 text-[9px] uppercase tracking-wider font-mono px-1.5 py-0.5 rounded bg-pink-50 border border-pink-200 text-pink-700 font-medium">
           {badgeText}
         </div>
       )}

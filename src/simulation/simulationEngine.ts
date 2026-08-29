@@ -95,18 +95,39 @@ export class SimulationController {
 
   private findPresetSequence() {
     const promptLower = this.request.prompt.toLowerCase();
-    const matched = PRESET_PROMPTS.find(p => 
-      promptLower.includes('neural') || 
+    if (
+      promptLower.includes('calculate') ||
+      promptLower.includes('equation') ||
+      promptLower.includes('quadratic') ||
+      promptLower.includes('integral') ||
+      promptLower.includes('solve for') ||
+      promptLower.includes('math')
+    ) {
+      return PRESET_PROMPTS.find(p => p.id === 'prompt-calculate-equation') || PRESET_PROMPTS[0];
+    }
+    if (
+      promptLower.includes('python') ||
+      promptLower.includes('binary') ||
+      promptLower.includes('search') ||
+      promptLower.includes('code')
+    ) {
+      return PRESET_PROMPTS.find(p => p.id === 'prompt-python-binary-search') || PRESET_PROMPTS[2];
+    }
+    if (
+      promptLower.includes('quantum') ||
+      promptLower.includes('superposition') ||
+      promptLower.includes('qubit')
+    ) {
+      return PRESET_PROMPTS.find(p => p.id === 'prompt-quantum-computing') || PRESET_PROMPTS[3];
+    }
+    if (
+      promptLower.includes('neural') ||
       promptLower.includes('network') ||
       promptLower.includes('learn')
-    );
-    if (promptLower.includes('python') || promptLower.includes('binary') || promptLower.includes('search') || promptLower.includes('code')) {
-      return PRESET_PROMPTS[1];
+    ) {
+      return PRESET_PROMPTS.find(p => p.id === 'prompt-nn-learning') || PRESET_PROMPTS[1];
     }
-    if (promptLower.includes('quantum') || promptLower.includes('superposition') || promptLower.includes('qubit')) {
-      return PRESET_PROMPTS[2];
-    }
-    return matched || PRESET_PROMPTS[0];
+    return PRESET_PROMPTS[0];
   }
 
   // -------------------------------------------------------------

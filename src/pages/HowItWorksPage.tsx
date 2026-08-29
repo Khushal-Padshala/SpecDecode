@@ -15,71 +15,71 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onTabChange }) =
       <HowItWorks />
 
       {/* 2. Mathematical Foundation of Speculative Decoding */}
-      <div className="rounded-2xl border border-slate-800 bg-slate-950/80 p-6 sm:p-8 space-y-6 shadow-2xl">
-        <div className="flex items-center gap-2.5 border-b border-slate-850 pb-4">
-          <div className="p-2 rounded-xl bg-purple-500/20 border border-purple-500/40 text-purple-400">
+      <div className="rounded-2xl border border-pink-200/80 bg-white/95 p-6 sm:p-8 space-y-6 shadow-sm">
+        <div className="flex items-center gap-2.5 border-b border-pink-100 pb-4">
+          <div className="p-2 rounded-xl bg-pink-100 border border-pink-300 text-pink-600 shadow-xs">
             <Sparkles className="w-5 h-5" />
           </div>
           <div>
-            <h3 className="text-lg font-bold text-white">
+            <h3 className="text-lg font-bold text-slate-900">
               The Mathematics of Speculative Sampling &amp; Lossless Guarantee
             </h3>
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-slate-700">
               Why speculative decoding guarantees zero deviation from target model probabilities.
             </p>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs text-slate-300">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs text-slate-700">
           
-          <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-3">
-            <h4 className="font-bold text-cyan-300 font-mono flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-cyan-400"></span>
+          <div className="p-4 rounded-xl bg-pink-50/50 border border-pink-200/70 space-y-3">
+            <h4 className="font-bold text-pink-700 font-mono flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-pink-500"></span>
               Acceptance Criterion Formula
             </h4>
             <p className="leading-relaxed">
-              Given draft token <code className="text-purple-300">x</code> with draft probability <code className="text-purple-300">q(x)</code> and target probability <code className="text-cyan-300">p(x)</code>:
+              Given draft token <code className="text-pink-700 font-bold">x</code> with draft probability <code className="text-pink-700 font-bold">q(x)</code> and target probability <code className="text-indigo-700 font-bold">p(x)</code>:
             </p>
-            <div className="p-3 rounded bg-slate-950 border border-slate-850 font-mono text-center text-xs text-emerald-400 font-bold">
+            <div className="p-3 rounded bg-white border border-pink-200 font-mono text-center text-xs text-emerald-700 font-bold shadow-xs">
               Acceptance Probability = min(1,  p(x) / q(x) )
             </div>
-            <p className="text-[11px] text-slate-400">
+            <p className="text-[11px] text-slate-700">
               If the target model assigns equal or higher probability than the draft model (p(x) &ge; q(x)), the draft token is accepted with 100% certainty.
             </p>
           </div>
 
-          <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-3">
-            <h4 className="font-bold text-emerald-300 font-mono flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <div className="p-4 rounded-xl bg-pink-50/50 border border-pink-200/70 space-y-3">
+            <h4 className="font-bold text-indigo-700 font-mono flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-indigo-500"></span>
               Target Resampling on Rejection
             </h4>
             <p className="leading-relaxed">
-              If candidate token <code className="text-rose-300">x</code> is rejected, the target model draws a replacement token from modified residual distribution:
+              If candidate token <code className="text-rose-700 font-bold">x</code> is rejected, the target model draws a replacement token from modified residual distribution:
             </p>
-            <div className="p-3 rounded bg-slate-950 border border-slate-850 font-mono text-center text-xs text-blue-400 font-bold">
+            <div className="p-3 rounded bg-white border border-pink-200 font-mono text-center text-xs text-indigo-700 font-bold shadow-xs">
               p'(x) = max(0, p(x) - q(x)) / &Sigma; max(0, p(y) - q(y))
             </div>
-            <p className="text-[11px] text-slate-400">
-              This exact resampling satisfies the marginal probability distribution: <strong className="text-slate-200">&Sigma; = p(x)</strong> identically.
+            <p className="text-[11px] text-slate-700">
+              This exact resampling satisfies the marginal probability distribution: <strong className="text-slate-900">&Sigma; = p(x)</strong> identically.
             </p>
           </div>
 
         </div>
 
         {/* Reference Links & Key Takeaway */}
-        <div className="p-4 rounded-xl bg-cyan-950/20 border border-cyan-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs">
+        <div className="p-4 rounded-xl bg-pink-50/70 border border-pink-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs">
           <div className="space-y-1">
-            <span className="font-bold text-cyan-300">Key Scientific Result:</span>
-            <p className="text-slate-300">
+            <span className="font-bold text-pink-700">Key Scientific Result:</span>
+            <p className="text-slate-700">
               Speculative decoding is strictly <strong>lossless</strong>. The output text is indistinguishable from running pure target-model autoregression.
             </p>
           </div>
 
           <button
             onClick={() => onTabChange('demo')}
-            className="shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition-colors cursor-pointer"
+            className="shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white font-bold text-xs transition-colors cursor-pointer shadow-xs"
           >
-            <Zap className="w-3.5 h-3.5 fill-slate-950" />
+            <Zap className="w-3.5 h-3.5 fill-white" />
             <span>Test in Playground</span>
           </button>
         </div>

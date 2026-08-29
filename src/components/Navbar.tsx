@@ -36,7 +36,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-slate-800/80 bg-[#020617]/90 backdrop-blur-md">
+    <header className="sticky top-0 z-40 w-full border-b border-pink-100/80 bg-white/90 backdrop-blur-md shadow-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         
         {/* Left: Brand / Logo */}
@@ -45,19 +45,19 @@ export const Navbar: React.FC<NavbarProps> = ({
           className="flex items-center gap-3 cursor-pointer group"
           id="nav-brand-logo"
         >
-          <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500/20 to-indigo-600/30 border border-cyan-500/40 flex items-center justify-center shadow-lg shadow-cyan-500/10 group-hover:border-cyan-400 transition-colors">
-            <Zap className="w-5 h-5 text-cyan-400 fill-cyan-400/20" />
+          <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-pink-500/15 to-rose-500/25 border border-pink-300 flex items-center justify-center shadow-sm shadow-pink-500/10 group-hover:border-pink-500 transition-colors">
+            <Zap className="w-5 h-5 text-pink-600 fill-pink-500/20" />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="font-extrabold text-lg tracking-tight text-white group-hover:text-cyan-200 transition-colors">
+              <span className="font-extrabold text-lg tracking-tight text-slate-900 group-hover:text-pink-600 transition-colors">
                 SpecDecode
               </span>
-              <span className="text-[10px] uppercase font-mono tracking-widest px-1.5 py-0.5 rounded bg-cyan-950/80 text-cyan-400 border border-cyan-800/50">
+              <span className="text-[10px] uppercase font-mono tracking-widest px-1.5 py-0.5 rounded bg-pink-100 text-pink-700 border border-pink-200">
                 v1.2
               </span>
             </div>
-            <p className="text-[10px] text-slate-400 hidden sm:block">
+            <p className="text-[10px] text-slate-700 hidden sm:block">
               LLM Speculative Decoding Engine
             </p>
           </div>
@@ -74,8 +74,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                 onClick={() => onTabChange(item.id)}
                 className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs lg:text-sm font-medium transition-all duration-150 ${
                   isActive
-                    ? 'bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 shadow-sm shadow-cyan-500/10'
-                    : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'
+                    ? 'bg-pink-50 text-pink-700 border border-pink-200/80 shadow-xs shadow-pink-500/5 font-semibold'
+                    : 'text-slate-800 hover:text-pink-600 hover:bg-pink-50/50'
                 }`}
               >
                 {item.icon}
@@ -91,38 +91,38 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             id="status-indicator-btn"
             onClick={() => setShowStatusModal(!showStatusModal)}
-            className="flex items-center gap-2 px-2.5 py-1 rounded-full bg-slate-900/90 border border-slate-700/60 hover:border-slate-600 text-xs text-slate-300 transition-colors"
+            className="flex items-center gap-2 px-2.5 py-1 rounded-full bg-pink-50/80 border border-pink-200 hover:border-pink-300 text-xs text-slate-700 transition-colors cursor-pointer"
             title="Click to view inference simulation status"
           >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            <span className="font-mono text-[11px] text-slate-300">Simulation Mode</span>
+            <span className="font-mono text-[11px] text-slate-700">Simulation Mode</span>
           </button>
 
           {/* Run Guided Demo CTA */}
           <button
             id="nav-run-demo-btn"
             onClick={onTriggerDemo}
-            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-semibold text-xs transition-all shadow-md shadow-cyan-500/20 active:scale-95"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white font-semibold text-xs transition-all shadow-md shadow-pink-500/20 active:scale-95 cursor-pointer"
           >
-            <Play className="w-3.5 h-3.5 fill-slate-950" />
+            <Play className="w-3.5 h-3.5 fill-white" />
             <span>Run Demo</span>
           </button>
         </div>
       </div>
 
       {/* Mobile Sub-Navigation Bar */}
-      <div className="md:hidden border-t border-slate-800/60 bg-[#020617]/95 px-3 py-2 flex items-center justify-between overflow-x-auto space-x-2 text-xs">
+      <div className="md:hidden border-t border-pink-100 bg-white/95 px-3 py-2 flex items-center justify-between overflow-x-auto space-x-2 text-xs">
         {navItems.map((item) => (
           <button
             key={item.id}
             onClick={() => onTabChange(item.id)}
             className={`whitespace-nowrap px-2.5 py-1 rounded text-xs ${
               activeTab === item.id
-                ? 'bg-cyan-500/20 text-cyan-300 font-semibold border border-cyan-500/30'
-                : 'text-slate-400 hover:text-slate-200'
+                ? 'bg-pink-100 text-pink-700 font-semibold border border-pink-200'
+                : 'text-slate-800 hover:text-pink-600'
             }`}
           >
             {item.label}
@@ -132,31 +132,31 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* Status Modal Info */}
       {showStatusModal && (
-        <div className="absolute right-6 top-18 z-50 w-80 p-4 rounded-xl bg-slate-900 border border-slate-700 shadow-2xl text-xs space-y-2.5">
-          <div className="flex items-center justify-between pb-2 border-b border-slate-800">
-            <span className="font-semibold text-slate-200 flex items-center gap-1.5">
-              <Layers className="w-3.5 h-3.5 text-cyan-400" />
+        <div className="absolute right-6 top-18 z-50 w-80 p-4 rounded-xl bg-white border border-pink-200 shadow-xl text-xs space-y-2.5">
+          <div className="flex items-center justify-between pb-2 border-b border-pink-100">
+            <span className="font-semibold text-slate-800 flex items-center gap-1.5">
+              <Layers className="w-3.5 h-3.5 text-pink-500" />
               Runtime Architecture
             </span>
             <button 
               onClick={() => setShowStatusModal(false)}
-              className="text-slate-400 hover:text-white"
+              className="text-slate-400 hover:text-slate-700"
             >
               ✕
             </button>
           </div>
-          <div className="space-y-1.5 text-slate-300">
-            <p className="text-[11px] text-slate-400 leading-relaxed">
-              This interactive dashboard is currently powered by the standalone <strong className="text-cyan-300">SpecDecode Simulation Engine</strong>.
+          <div className="space-y-1.5 text-slate-600">
+            <p className="text-[11px] text-slate-600 leading-relaxed">
+              This interactive dashboard is powered by the standalone <strong className="text-pink-600">SpecDecode Simulation Engine</strong>.
             </p>
-            <div className="p-2 rounded bg-slate-950 border border-slate-800 font-mono text-[10px] space-y-1 text-slate-400">
+            <div className="p-2 rounded bg-pink-50/60 border border-pink-100 font-mono text-[10px] space-y-1 text-slate-700">
               <div className="flex justify-between">
                 <span>Inference Mode:</span>
-                <span className="text-emerald-400">Simulated (Deterministic)</span>
+                <span className="text-emerald-700 font-medium">Simulated (Deterministic)</span>
               </div>
               <div className="flex justify-between">
                 <span>API Gateway:</span>
-                <span className="text-cyan-400">/services/api.ts (Ready)</span>
+                <span className="text-pink-600 font-medium">/services/api.ts (Ready)</span>
               </div>
               <div className="flex justify-between">
                 <span>Target Model:</span>
@@ -167,8 +167,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <span>Llama-3-8B (γ=5)</span>
               </div>
             </div>
-            <p className="text-[10px] text-slate-400">
-              Backend engineers can connect real vLLM / HuggingFace speculative decoding endpoints by implementing the exported handlers in <code className="text-cyan-400">src/services/api.ts</code>.
+            <p className="text-[10px] text-slate-700">
+              Backend engineers can connect real vLLM / HuggingFace speculative decoding endpoints by implementing the exported handlers in <code className="text-pink-600">src/services/api.ts</code>.
             </p>
           </div>
         </div>

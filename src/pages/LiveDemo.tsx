@@ -174,17 +174,17 @@ export const LiveDemo: React.FC<LiveDemoProps> = ({
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 py-4">
       
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-5">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-pink-100 pb-5">
         <div>
           <div className="flex items-center gap-2">
-            <div className="p-2 rounded-xl bg-cyan-500/20 border border-cyan-500/40 text-cyan-400">
+            <div className="p-2 rounded-xl bg-pink-100 border border-pink-300 text-pink-600 shadow-xs">
               <Zap className="w-5 h-5" />
             </div>
             <div>
-              <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+              <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
                 Speculative Decoding Playground
               </h1>
-              <p className="text-xs sm:text-sm text-slate-300 mt-0.5">
+              <p className="text-xs sm:text-sm text-slate-700 mt-0.5">
                 Compare conventional autoregressive generation with speculative decoding in real time.
               </p>
             </div>
@@ -192,7 +192,7 @@ export const LiveDemo: React.FC<LiveDemoProps> = ({
         </div>
 
         <div className="flex items-center gap-2">
-          <span className="text-xs font-mono px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300">
+          <span className="text-xs font-mono px-3 py-1 rounded-full bg-emerald-50 border border-emerald-300 text-emerald-800 font-semibold shadow-xs">
             ● Deterministic Simulation Engine Active
           </span>
         </div>
@@ -200,12 +200,12 @@ export const LiveDemo: React.FC<LiveDemoProps> = ({
 
       {/* Error Message if Empty Prompt */}
       {errorMessage && (
-        <div className="rounded-xl border border-rose-500/40 bg-rose-950/40 p-4 flex items-center justify-between gap-3 text-xs text-rose-300 font-mono">
+        <div className="rounded-xl border border-rose-200 bg-rose-50 p-4 flex items-center justify-between gap-3 text-xs text-rose-800 font-mono shadow-xs">
           <div className="flex items-center gap-2">
-            <AlertTriangle className="w-4 h-4 text-rose-400" />
+            <AlertTriangle className="w-4 h-4 text-rose-600" />
             <span>{errorMessage}</span>
           </div>
-          <button onClick={() => setErrorMessage(null)} className="text-rose-400 hover:text-white">
+          <button onClick={() => setErrorMessage(null)} className="text-rose-600 hover:text-rose-900 cursor-pointer">
             ✕
           </button>
         </div>
